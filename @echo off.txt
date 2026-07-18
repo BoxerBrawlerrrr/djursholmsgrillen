@@ -1,0 +1,4 @@
+@echo off
+cd /d C:\Users\philip\djursholmsgrillen
+git status > C:\Users\philip\djursholmsgrillen\gitstatus.txt 2>&1
+git log --oneline -3 >> C:\Users\philip\djursholmsgrillen\gitstatus.txt 2>&1
