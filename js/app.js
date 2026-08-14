@@ -105,5 +105,4 @@ function initPetals(id, count) {
 document.addEventListener("DOMContentLoaded", () => {
   renderNav();
   initReveal();
-  initPetals("petals", 14);
 });
