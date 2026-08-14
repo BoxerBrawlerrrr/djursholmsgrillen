@@ -9,17 +9,18 @@
   /* Neutrals — light, warm */
   --bg: #faf8f3;
   --surface: #ffffff;
-  --surface-2: #f2efe8;
-  --ink: #1c1b1a;
-  --muted: #726c64;
-  --dim: #a49d92;
-  --border: #ebe6dd;
+  --surface-2: #efece4;
+  --ink: #191817;
+  --muted: #625c54;        /* darker for clear reading */
+  --dim: #8c857a;          /* nav inactive, still legible */
+  --border: #ddd7cb;       /* stronger definition */
 
   /* Bright accents */
-  --coral: #ef4e28;        /* primary */
-  --coral-dark: #d13e1c;
-  --teal: #0f7b67;         /* secondary */
-  --teal-dark: #0b5f50;
+  --coral: #e8461d;        /* primary fill (buttons) */
+  --coral-dark: #c93a15;   /* hover */
+  --coral-text: #c0360f;   /* coral used as TEXT on light bg */
+  --teal: #0e7461;         /* secondary */
+  --teal-dark: #0a5544;
   --yellow: #f5a623;       /* highlight */
   --sky: #2f7fd4;
 
@@ -76,8 +77,8 @@ h3 { font-size: 1.02rem; font-weight: 700; }
   font-family: var(--body);
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.7rem;
-  color: var(--coral);
+  font-size: 0.72rem;
+  color: var(--coral-text);
   font-weight: 700;
 }
 
@@ -266,7 +267,7 @@ h3 { font-size: 1.02rem; font-weight: 700; }
 /* pills */
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .pill { padding: 10px 14px; border-radius: 999px; cursor: pointer; font-size: 0.9rem; background: var(--surface); border: 1px solid var(--border); color: var(--ink); }
-.pill.selected { border-color: var(--coral); color: var(--coral); background: rgba(239, 78, 40, 0.06); }
+.pill.selected { border-color: var(--coral); color: var(--coral-text); background: rgba(232, 70, 29, 0.07); }
 
 /* notice */
 .notice { text-align: center; padding: 44px 20px; }
@@ -315,7 +316,7 @@ h3 { font-size: 1.02rem; font-weight: 700; }
 }
 .bottom-nav a { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.64rem; font-weight: 600; color: var(--dim); flex: 1; padding: 8px 0; transition: color 0.15s var(--ease); }
 .bottom-nav a svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; }
-.bottom-nav a.active { color: var(--coral); }
+.bottom-nav a.active { color: var(--coral-text); }
 
 /* ---------- Scroll reveal (subtle) ---------- */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.45s var(--ease), transform 0.45s var(--ease); }
