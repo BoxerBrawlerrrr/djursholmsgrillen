@@ -4,43 +4,23 @@
    ============================================================ */
 
 const DG = {
-  // ---- Menu ----
+  // ---- Menu (placeholder — replace with the real menu later) ----
   menu: [
     {
-      category: "Burgare",
+      category: "Placeholder",
       items: [
-        { id: "wagyu", name: "Wagyu-burgare", desc: "Japansk wagyu, tryffelmajo, picklad lök", price: 189, emoji: "🍔", premium: true },
-        { id: "djursholmaren", name: "Djursholmaren", desc: "Dubbel cheeseburgare, husets dressing", price: 129, emoji: "🍔" },
-        { id: "bacon", name: "Baconburgare", desc: "Krispig bacon, cheddar, BBQ", price: 139, emoji: "🥓" },
-        { id: "kyckling", name: "Kycklingburgare", desc: "Friterad kyckling, sriracha-aioli", price: 129, emoji: "🍗" },
-        { id: "halloumi", name: "Halloumiburgare", desc: "Grillad halloumi, örtmajo (veg)", price: 125, emoji: "🧀" },
-        { id: "barn", name: "Barnburgare", desc: "Liten burgare med pommes", price: 79, emoji: "🧒" },
+        { id: "ph1", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
+        { id: "ph2", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
+        { id: "ph3", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
+        { id: "ph4", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
       ],
     },
     {
-      category: "Tillbehör",
+      category: "Placeholder",
       items: [
-        { id: "tryffelpommes", name: "Tryffelpommes", desc: "Handskurna, tryffel & parmesan", price: 69, emoji: "🍟", premium: true },
-        { id: "pommes", name: "Pommes", desc: "Klassiska, flingsalt", price: 49, emoji: "🍟" },
-        { id: "sotpotatis", name: "Sötpotatispommes", desc: "Med chipotlemajo", price: 59, emoji: "🍠" },
-        { id: "lokringar", name: "Lökringar", desc: "Frasiga, husets", price: 55, emoji: "🧅" },
-        { id: "coleslaw", name: "Coleslaw", desc: "Krämig, syrlig", price: 39, emoji: "🥗" },
-      ],
-    },
-    {
-      category: "Dryck",
-      items: [
-        { id: "milkshake", name: "Milkshake", desc: "Vanilj, choklad eller jordgubb", price: 59, emoji: "🥤", premium: true },
-        { id: "lemonad", name: "Hemlagad lemonad", desc: "Pressad citron, mynta", price: 39, emoji: "🍋" },
-        { id: "lask", name: "Läsk", desc: "Utvalda sorter", price: 29, emoji: "🥤" },
-        { id: "vatten", name: "Kolsyrat vatten", desc: "Med lime", price: 25, emoji: "💧" },
-      ],
-    },
-    {
-      category: "Efterrätt",
-      items: [
-        { id: "kladdkaka", name: "Kladdkaka", desc: "Varm, med vaniljglass", price: 65, emoji: "🍫", premium: true },
-        { id: "softglass", name: "Softglass", desc: "Med strössel", price: 39, emoji: "🍦" },
+        { id: "ph5", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
+        { id: "ph6", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
+        { id: "ph7", name: "Placeholder", desc: "Placeholder", price: 0, emoji: "" },
       ],
     },
   ],
@@ -52,22 +32,22 @@ const DG = {
     black: { name: "Black", discount: 15, threshold: 10000 },
   },
 
-  // ---- Mock signed-in user / family ----
+  // ---- Signed-in user / family (placeholder — comes from Supabase later) ----
   user: {
-    name: "Philip",
+    name: "Placeholder",
     tier: "guld",
-    points: 240,               // 1 point = 1 kr
-    spentThisYear: 3200,       // rolling 12-month family total (kr)
-    familyBalance: 500,        // pre-loaded shared balance (kr)
+    points: 0,                 // 1 point = 1 kr
+    spentThisYear: 0,          // rolling 12-month family total (kr)
+    familyBalance: 0,          // pre-loaded shared balance (kr)
     family: [
-      { name: "Philip", role: "Vuxen", last: "Wagyu-burgare · 189 kr", birthday: "1990-04-12" },
-      { name: "Anna", role: "Vuxen", last: "Kycklingburgare · 129 kr", birthday: "1992-09-03" },
-      { name: "Liam", role: "Barn", last: "Barnburgare · 79 kr", birthday: "2015-06-21" },
+      { name: "Placeholder", role: "Placeholder", last: "Placeholder", birthday: "Placeholder" },
+      { name: "Placeholder", role: "Placeholder", last: "Placeholder", birthday: "Placeholder" },
+      { name: "Placeholder", role: "Placeholder", last: "Placeholder", birthday: "Placeholder" },
     ],
     history: [
-      { who: "Philip", what: "Wagyu-burgare, Tryffelpommes", when: "Idag 12:40", amount: 258 },
-      { who: "Anna", what: "Kycklingburgare, Läsk", when: "Igår 18:10", amount: 158 },
-      { who: "Liam", what: "Barnburgare, Softglass", when: "3 apr 17:25", amount: 118 },
+      { who: "Placeholder", what: "Placeholder", when: "Placeholder", amount: 0 },
+      { who: "Placeholder", what: "Placeholder", when: "Placeholder", amount: 0 },
+      { who: "Placeholder", what: "Placeholder", when: "Placeholder", amount: 0 },
     ],
   },
 
@@ -88,7 +68,7 @@ const DG = {
   ],
 
   // ---- Helpers ----
-  fmt(kr) { return kr.toLocaleString("sv-SE") + " kr"; },
+  fmt(kr) { return kr ? kr.toLocaleString("sv-SE") + " kr" : "Placeholder"; },
 
   currentTier() {
     const s = this.user.spentThisYear;

@@ -15,10 +15,10 @@ function renderCard() {
       <div class="card">
         <div class="progress-label">
           <span>Mot ${nextTier.name}</span>
-          <span>${DG.fmt(u.spentThisYear)} / ${DG.fmt(nextTier.threshold)}</span>
+          <span>Placeholder</span>
         </div>
         <div class="progress"><span style="width:${pct}%"></span></div>
-        <p class="row-sub" style="padding-top:10px;">Handla för ${DG.fmt(left)} till inom 12 månader för att nå ${nextTier.name} (${nextTier.discount}% rabatt).</p>
+        <p class="row-sub" style="padding-top:10px;">Placeholder</p>
       </div>`;
   } else {
     progressHtml = `<div class="card"><p>Du är på högsta nivån, <strong style="color:var(--neon-pink-soft)">Black</strong>. 15% rabatt på allt.</p></div>`;
@@ -40,8 +40,8 @@ function renderCard() {
     <!-- points -->
     <div class="card" style="text-align:center;">
       <p class="row-sub">Poängsaldo</p>
-      <div class="points-big">${u.points}</div>
-      <p class="muted" style="margin-top:6px;">= ${DG.fmt(u.points)} att använda vid nästa besök</p>
+      <div class="points-big">Placeholder</div>
+      <p class="muted" style="margin-top:6px;">Placeholder</p>
     </div>
 
     ${progressHtml}

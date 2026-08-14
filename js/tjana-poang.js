@@ -17,9 +17,9 @@ function renderEarn() {
     const leftKr = nextTier.threshold - DG.user.spentThisYear;
     progressHtml = `
       <div class="card">
-        <div class="progress-label"><span>Mot ${nextTier.name}</span><span>${pct}%</span></div>
+        <div class="progress-label"><span>Mot ${nextTier.name}</span><span>Placeholder</span></div>
         <div class="progress"><span style="width:${pct}%"></span></div>
-        <p class="row-sub" style="padding-top:10px;">${DG.fmt(leftKr)} kvar till ${nextTier.name}.</p>
+        <p class="row-sub" style="padding-top:10px;">Placeholder</p>
       </div>`;
   }
 

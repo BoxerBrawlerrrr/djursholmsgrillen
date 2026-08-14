@@ -23,7 +23,7 @@ function renderFamily() {
     <div class="stat-grid" style="margin-bottom:14px;">
       <div class="stat"><div class="stat-num">${DG.fmt(u.spentThisYear)}</div><div class="stat-label">Senaste 12 mån</div></div>
       <div class="stat"><div class="stat-num">${u.family.length}/5</div><div class="stat-label">Medlemmar</div></div>
-      <div class="stat"><div class="stat-num">${u.points}</div><div class="stat-label">Poäng</div></div>
+      <div class="stat"><div class="stat-num">Placeholder</div><div class="stat-label">Poäng</div></div>
     </div>
 
     <!-- members -->
