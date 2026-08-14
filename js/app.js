@@ -104,7 +104,6 @@ function initPetals(id, count) {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderNav();
-  startCountdown("countdown");
   initReveal();
   initPetals("petals", 14);
 });
