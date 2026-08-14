@@ -21,7 +21,7 @@ function renderCard() {
         <p class="row-sub" style="padding-top:10px;">Handla för ${DG.fmt(left)} till inom 12 månader för att nå ${nextTier.name} (${nextTier.discount}% rabatt).</p>
       </div>`;
   } else {
-    progressHtml = `<div class="card"><p>Du är på högsta nivån — <strong style="color:var(--neon-pink-soft)">Black</strong>. 15% rabatt på allt.</p></div>`;
+    progressHtml = `<div class="card"><p>Du är på högsta nivån, <strong style="color:var(--neon-pink-soft)">Black</strong>. 15% rabatt på allt.</p></div>`;
   }
 
   root.innerHTML = `

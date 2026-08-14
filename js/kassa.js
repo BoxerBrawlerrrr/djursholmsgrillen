@@ -76,7 +76,7 @@ function renderCheckout() {
         <div class="field"><label>Giltigt t.o.m.</label><input placeholder="MM/ÅÅ" /></div>
         <div class="field"><label>CVC</label><input inputmode="numeric" placeholder="123" /></div>
       </div>
-      <p class="row-sub">Betalning är en demo — ingen riktig betalning sker.</p>
+      <p class="row-sub">Betalning är en demo, ingen riktig betalning sker.</p>
     </div>
 
     <button class="btn btn-primary" id="payBtn" style="margin-top:8px;">Betala ${DG.fmt(total)}</button>

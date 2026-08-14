@@ -77,7 +77,7 @@ const DG = {
     { id: "instagram", label: "Instagram-inlägg / tagg", points: 5, cadence: "1×/månad" },
     { id: "tiktok", label: "TikTok-inlägg / tagg", points: 5, cadence: "1×/månad" },
     { id: "snapchat", label: "Snapchat-snap / tagg", points: 5, cadence: "1×/månad" },
-    { id: "facebook", label: "Facebook — lokal grupp", points: 5, cadence: "1×/månad" },
+    { id: "facebook", label: "Facebook, lokal grupp", points: 5, cadence: "1×/månad" },
     { id: "referral", label: "Värva en ny medlem", points: 10, cadence: "Obegränsat" },
   ],
 
