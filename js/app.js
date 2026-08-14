@@ -82,8 +82,29 @@ function initReveal() {
   items.forEach((el) => io.observe(el));
 }
 
+// ---- Falling sakura petals ----
+function initPetals(id, count) {
+  const wrap = document.getElementById(id);
+  if (!wrap) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement("span");
+    p.className = "petal";
+    const size = 8 + Math.random() * 8;
+    p.style.left = Math.random() * 100 + "%";
+    p.style.width = size + "px";
+    p.style.height = size + "px";
+    p.style.animationDuration = 7 + Math.random() * 8 + "s";
+    p.style.animationDelay = -Math.random() * 12 + "s";
+    p.style.opacity = 0.5 + Math.random() * 0.4;
+    wrap.appendChild(p);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderNav();
   startCountdown("countdown");
   initReveal();
+  initPetals("petals", 14);
 });
