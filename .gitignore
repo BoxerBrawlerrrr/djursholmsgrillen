@@ -1,0 +1,15 @@
+# Diagnostic / setup junk — not part of the app
+chk2.txt
+nodecheck.txt
+install_node_and_claude.bat
+commit.bat
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.log
+
+# Dependencies / env (for when we add backend)
+node_modules/
+.env
+.env.local
