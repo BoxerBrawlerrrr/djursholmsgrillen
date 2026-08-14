@@ -1,11 +1,18 @@
 /* Djursholmsgrillen — shared app JS */
 
-// ---- Bottom navigation (rendered on every page) ----
+// ---- SVG icons (stroke-based, crisp) ----
+const ICONS = {
+  home: '<svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>',
+  order: '<svg viewBox="0 0 24 24"><path d="M4 9h16"/><path d="M4 13h16"/><path d="M5 9a7 7 0 0 1 14 0"/><path d="M5 13c0 3 3 5 7 5s7-2 7-5"/></svg>',
+  card: '<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 17l-5.2 2.6 1-5.8L3.5 9.7l5.9-.9z"/></svg>',
+};
+
 const NAV_ITEMS = [
-  { href: "index.html", icon: "⌂", label: "Hem" },        // house
-  { href: "bestall.html", icon: "\u{1F354}", label: "Beställ" }, // burger
-  { href: "mitt-kort.html", icon: "◈", label: "Mitt kort" },
-  { href: "tjana-poang.html", icon: "★", label: "Tjäna poäng" },
+  { href: "index.html", icon: ICONS.home, label: "Hem" },
+  { href: "bestall.html", icon: ICONS.order, label: "Beställ" },
+  { href: "mitt-kort.html", icon: ICONS.card, label: "Mitt kort" },
+  { href: "tjana-poang.html", icon: ICONS.star, label: "Tjäna poäng" },
 ];
 
 function renderNav() {
@@ -15,23 +22,20 @@ function renderNav() {
   nav.innerHTML = NAV_ITEMS.map((it) => {
     const active = it.href === current ? " active" : "";
     return `<a class="${active.trim()}" href="${it.href}">
-      <span class="icon">${it.icon}</span>
-      <span>${it.label}</span>
+      ${it.icon}<span>${it.label}</span>
     </a>`;
   }).join("");
   document.body.appendChild(nav);
 }
 
-// ---- Countdown to opening: 15 Aug 2026, 12:00 ----
+// ---- Countdown to opening: 15 Aug 2026, 12:00 (Stockholm) ----
 function startCountdown(elId) {
   const el = document.getElementById(elId);
   if (!el) return;
   const target = new Date("2026-08-15T12:00:00+02:00").getTime();
 
   function tick() {
-    const now = Date.now();
-    let diff = Math.max(0, target - now);
-
+    let diff = Math.max(0, target - Date.now());
     const day = Math.floor(diff / 86400000); diff -= day * 86400000;
     const hr = Math.floor(diff / 3600000); diff -= hr * 3600000;
     const min = Math.floor(diff / 60000); diff -= min * 60000;
@@ -56,7 +60,30 @@ function startCountdown(elId) {
   setInterval(tick, 1000);
 }
 
+// ---- Scroll reveal ----
+function initReveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("in"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  items.forEach((el) => io.observe(el));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderNav();
   startCountdown("countdown");
+  initReveal();
 });
